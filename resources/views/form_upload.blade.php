@@ -94,7 +94,7 @@
     <p>Aplikasi pendataan mahasiswa.</p>
 
     <div class="container">
-    <form action="/action_page.php">
+    <form action="/action_page.php" id="form_upload">
     <div class="row">
         <div class="col-25">
         <label for="fname">Nama</label>
@@ -135,7 +135,7 @@
         <label for="subject">Gambar</label>
         </div>
         <div class="col-75">
-        <input type="file" id="image" name="image" required>
+        <input type="file" id="image" name="image" required accept=".jpg,.jpeg,.png">
         <p class="tag-input">*file (.jpg, .jpeg atau .png)</p>
         </div>
     </div>
@@ -144,7 +144,7 @@
         <label for="subject">Sertifikat</label>
         </div>
         <div class="col-75">
-        <input type="file" id="sertifikat" name="sertifikat">
+        <input type="file" id="sertifikat" name="sertifikat" accept=".zip,.rar">
         <p class="tag-input">*file (.zip atau .rar)</p>
         </div>
     </div>
@@ -153,16 +153,22 @@
         <label for="subject">CV (Curriculum Vitae)</label>
         </div>
         <div class="col-75">
-        <input type="file" id="cv" name="cv">
+        <input type="file" id="cv" name="cv" accept=".pdf">
         <p class="tag-input">*file: (.pdf)</p>
         </div>
     </div>
     <br>
     <div class="row">
-        <input type="button" value="Reset">
+        <input type="button" onclick="resetForm()" value="Reset">
         <input type="submit" value="Submit">
     </div>
     </form>
     </div>
+
+    <script>
+        function resetForm() {
+        document.getElementById("form_upload").reset();
+        }
+    </script>
 </body>
 </html>
